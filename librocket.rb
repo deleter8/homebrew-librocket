@@ -14,7 +14,6 @@ class Librocket < Formula
     system "cd Build && xcodebuild -project libRocket.xcodeproj/ -configuration Release"
     system "mkdir -p #{prefix}/lib/python2.7/site-packages/"
     system "cp -a Build/Release/*.a #{prefix}/lib/"
-    system "cp -a Build/Release/*.dylib #{prefix}/lib/"
     system "cp bin/rocket.py #{prefix}/lib/python2.7/site-packages/"
     system "cp Build/Release/_rocketcore.so #{prefix}/lib/python2.7/site-packages/"
     system "cp Build/Release/_rocketcontrols.so #{prefix}/lib/python2.7/site-packages/"
