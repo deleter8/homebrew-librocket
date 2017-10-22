@@ -1,8 +1,8 @@
 require 'formula'
 
 class Librocket < Formula
-  # current head, 13/Dec/2015
-  head 'https://github.com/libRocket/libRocket.git', :using => :git, :revision => 'f164420c505a073fc878be9b5e238e3a2a2955f8'
+  # current head, 26/Nov/2016
+  head 'https://github.com/deleter8/libRocket.git', :using => :git, :revision => '4c811fdc4bfd84efb845f70f24b5b058ac6b449a'
   homepage 'http://librocket.com'
 
   depends_on 'cmake'
