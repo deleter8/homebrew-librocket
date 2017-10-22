@@ -10,7 +10,7 @@ class Librocket < Formula
   depends_on 'boost-python'
 
   def install
-    system "cd Build && cmake . -G Xcode -DBUILD_PYTHON_BINDINGS=On"
+    system "cd Build && cmake . -G Xcode -DBUILD_PYTHON_BINDINGS=On -DBUILD_FRAMEWORK=On"
     system "cd Build && xcodebuild -project libRocket.xcodeproj/ -configuration Release"
     system "mkdir -p #{prefix}/lib/python2.7/site-packages/"
     system "cp -a Build/Release/*.dylib #{prefix}/lib/"
