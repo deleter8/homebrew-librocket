@@ -10,13 +10,14 @@ class Librocket < Formula
   depends_on 'boost-python'
 
   def install
-    system "cd Build && cmake . -G Xcode -DBUILD_PYTHON_BINDINGS=On -DBUILD_FRAMEWORK=On"
+    system "cd Build && cmake . -G Xcode -DBUILD_PYTHON_BINDINGS=On -DBUILD_SHARED_LIBS=off"
     system "cd Build && xcodebuild -project libRocket.xcodeproj/ -configuration Release"
     system "mkdir -p #{prefix}/lib/python2.7/site-packages/"
-    # system "cp -a Build/Release/*.dylib #{prefix}/lib/"
-    # system "cp bin/rocket.py #{prefix}/lib/python2.7/site-packages/"
-    # system "cp Build/Release/_rocketcore.so #{prefix}/lib/python2.7/site-packages/"
-    # system "cp Build/Release/_rocketcontrols.so #{prefix}/lib/python2.7/site-packages/"
+    system "cp -a Build/Release/*.a #{prefix}/lib/"
+    system "cp -a Build/Release/*.dylib #{prefix}/lib/"
+    system "cp bin/rocket.py #{prefix}/lib/python2.7/site-packages/"
+    system "cp Build/Release/_rocketcore.so #{prefix}/lib/python2.7/site-packages/"
+    system "cp Build/Release/_rocketcontrols.so #{prefix}/lib/python2.7/site-packages/"
     system "cp -r Include #{prefix}/include"
   end
 end
