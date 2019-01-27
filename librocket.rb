@@ -2,7 +2,7 @@ require 'formula'
 
 class Librocket < Formula
   # current head, 26/Nov/2016
-  head 'https://github.com/deleter8/libRocket.git', :using => :git, :revision => '4c811fdc4bfd84efb845f70f24b5b058ac6b449a'
+  head 'https://github.com/deleter8/libRocket.git', :using => :git, :revision => 'e64913e82963a6db2760f63d76785b8c7ff39284'
   homepage 'http://librocket.com'
 
   depends_on 'cmake'
